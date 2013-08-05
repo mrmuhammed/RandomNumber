@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Number Guesser</title>
+<script>
+var max=101            
+var min=0             
+var cGuess=50;         
+var Guesses=1;
+
+function Guess(n){		
+  if(n==1){	
+   min=cGuess		
+  }
+  else{			
+   max=cGuess
+  }
+  Guesses=Guesses+1	
+  cGuess=Math.floor((max+min)/2)
+  Guesser.value=cGuess		
+  guesses.value=Guesses		
+}
+
+function Start(){		
+  max=101			
+  min=0				
+  cGuess=50;
+  Guesses=1;
+  Guesser.value=cGuess
+  guesses.value=Guesses
+}
+</script>
+</head>
+
+<body bgcolor=black onload=Start()>
+<center><h1><font color=red>Number Guesser
+<table border=5 bordercolor=gold>
+ <tr>
+  <td colspan=2>
+   <center>
+   <font color=red size=4>
+    Think of a number between 0 and 100. <br>Now the computer is going to guess it in 7 or less     guesses.
+  </td>
+ </tr>
+ <tr>
+  <td width=50%>
+  <center>
+   <font color=red size=4>
+    No. Guesses:
+  </td>
+  <td>
+   <center>
+    <input value=1 id=guesses size=5>		<!--guesses the user has taken-->
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <center>
+    <font color=red size=4>
+     Computer Guess:
+  </td>
+  <td>
+   <center>
+    <input value=50 id=Guesser size=5>		<!--the computers guess-->
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <center>
+    <input type=button value=Higher onclick=Guess(1)>		<!--//"Higher" button-->
+  </td>
+  <td>
+   <center>
+    <input type=button value=Lower onclick=Guess(2)>		
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+   <center>
+    <input type=button value="Start Again" onclick=Start()>	
+  </td>
+ </tr>
+</table>
+</body>
+</html>
